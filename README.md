@@ -8,4 +8,4 @@ This is DNS of HyperTech Incorporated.
 
 check them out: https://github.com/HyperTechInc/
 
-also a message: https://github.com/HyperTechInc/NewRepoGuys/blob/main/
+also a message: https://github.com/HyperTechInc/NewRepoGuys/
