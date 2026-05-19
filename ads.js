@@ -48,30 +48,27 @@
         document.getElementById('xiaomi-toggle-mute').addEventListener('click', toggleAudioFeed);
         document.getElementById('xiaomi-force-rotation').addEventListener('click', rotateActivePromoElement);
     }
-
-    // 3. Global Callback called automatically when YouTube API loads down the wire
-    window.onYouTubeIframeAPIReady = function() {
-        buildAdBannerContainer();
-        
-        const currentVideo = XiaomiMediaCatalog[currentMediaIndex];
-        document.getElementById('channel-credit').textContent = `SOURCE: ${currentVideo.credit}`;
-
-        // Bind raw player node object configurations
-        ytPlayerNode = new YT.Player('xiaomi-player-target', {
-            height: '100%',
-            width: '100%',
-            videoId: currentVideo.id,
-            playerVars: {
-                'autoplay': 1,
-                'mute': isDeviceAudioMuted ? 1 : 0,
-                'controls': 1,
-                'rel': 0,
-                'modestbranding': 1
-            },
-            events: {
-                'onReady': onPlayerReady,
-                'onStateChange': onPlayerStateChange
-            }
+// Inside window.onYouTubeIframeAPIReady in ads.js
+ytPlayerNode = new YT.Player('xiaomi-player-target', {
+    height: '100%',
+    width: '100%',
+    videoId: currentVideo.id,
+    playerVars: {
+        'autoplay': 1,
+        'mute': isDeviceAudioMuted ? 1 : 0,
+        'controls': 1,
+        'rel': 0,
+        'modestbranding': 1,
+        // FORCE THE CONNECTION TO TRUST YOUR DOMAIN
+        'origin': window.location.origin,
+        'widget_referrer': window.location.href
+    },
+    events: {
+        'onReady': onPlayerReady,
+        'onStateChange': onPlayerStateChange
+    }
+});
+    
         });
     };
 
