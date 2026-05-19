@@ -3,25 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>HyperTech-HQ Control</title>
     <style>
         .ad-banner {
     width: 100%;
     max-width: 650px;
     background: #000;
-    border: 2px solid #ff4a00; /* MIK Empire Sponsor Color */
+    border: 2px solid #ff4a00; /* Xiaomi Sponsor Orange */
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
     color: #ff4a00;
     text-align: center;
-    box-shadow: 0 0 10px rgba(255, 74, 0, 0.2);
+    box-shadow: 0 0 15px rgba(255, 74, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.ad-banner .video-viewport {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background: #000;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.ad-banner .video-viewport iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .ad-banner .credit {
     font-size: 0.75rem;
-    color: #ff4a00;
-    margin-top: 8px;
+    color: #888;
+    margin-top: 10px;
     font-weight: bold;
     letter-spacing: 1px;
 }
@@ -149,7 +170,22 @@
 <body>
 
     <div id="hypertech-sponsor-frame"></div>
-
+    
+<div <div class="ad-banner">
+    <div style="font-weight: bold; font-size: 0.9rem;">🔥 SPONSOR // XIAOMI PLATFORM</div>
+    
+    <div class="video-viewport">
+        <iframe 
+            src="https://www.youtube.com/embed/ur-pcOil2Pw?autoplay=1&mute=1&playlist=ur-pcOil2Pw,vA302Ps10fQ&loop=1&rel=0" 
+            allow="autoplay; encrypted-media" 
+            allowfullscreen>
+        </iframe>
+    </div>
+    
+    <div class="credit">SOURCE: XIAOMI GLOBAL MEDIA CORE</div>
+</div>
+    
+    
     <div class="terminal">
         <div class="header">
             <h1>[MIK EMPIRE HUB]</h1>
