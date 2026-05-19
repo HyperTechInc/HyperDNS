@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HyperTech-HQ Control</title>
+    <style>
+        :root {
+            --term-green: #00ff41;
+            --term-bg: #0d0d0d;
+            --term-border: #1a1a1a;
+            --term-text: #ffffff;
+        }
+
+        body {
+            background-color: var(--term-bg);
+            color: var(--term-green);
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .terminal {
+            border: 2px solid var(--term-green);
+            background-color: rgba(0, 0, 0, 0.9);
+            padding: 30px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 650px;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.2);
+        }
+
+        .header {
+            border-bottom: 1px solid var(--term-green);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--term-text);
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .status-badge {
+            background: #002b00;
+            border: 1px solid var(--term-green);
+            color: var(--term-green);
+            padding: 4px 10px;
+            border-radius: 3px;
+            display: inline-block;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .system-info {
+            font-size: 0.9rem;
+            color: #888;
+            margin: 15px 0;
+            line-height: 1.5;
+        }
+
+        .warning-box {
+            border: 1px dashed #ff3b30;
+            color: #ff3b30;
+            padding: 12px;
+            margin: 20px 0;
+            border-radius: 4px;
+            background-color: rgba(255, 59, 48, 0.05);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .dns-lookup-console {
+            background-color: #000;
+            border: 1px solid var(--term-border);
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
+
+        .console-title {
+            color: var(--term-text);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .output-line {
+            font-size: 0.85rem;
+            margin: 6px 0;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+
+        .security-banner {
+            margin-top: 25px;
+            font-size: 0.75rem;
+            color: #555;
+            text-align: center;
+            border-top: 1px solid var(--term-border);
+            padding-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal">
+        <div class="header">
+            <h1>[MIK EMPIRE HUB]</h1>
+            <div id="system-status" class="status-badge">🟩 ONLINE</div>
+        </div>
+
+        <div class="warning-box">
+            This is a read-only site. Here is nothing to do.
+        </div>
+
+        <div class="system-info">
+            <strong>NODE:</strong> Creek / Redmi 15 4G<br>
+            <strong>OS:</strong> HyperOS-3.0.302.0.WBOMIXM (Android 16)<br>
+            <strong>ZONE:</strong> hypertechinc.qzz.io
+        </div>
+
+        <div class="dns-lookup-console">
+            <div class="console-title">
+                <span>⚡ LIVE DNS LOOKUP ENGINE</span>
+                <span id="security-indicator" style="color: #00ff41;">[SECURE]</span>
+            </div>
+            <div id="dns-output">
+                <div class="output-line" style="color: #888;">Initializing DNS routing table components...</div>
+            </div>
+        </div>
+
+        <div class="security-banner">
+            Edge Protection Layer: Cloudflare DNS-Only Custom Resolver<br>
+            Client-Side Hardening Active &bull; Automated Bot Scraping Intercepted
+        </div>
+    </div>
+
+    <!-- Load the monolithic defense and logic script -->
+    <script src="main.js"></script>
+</body>
+  </html>
+
