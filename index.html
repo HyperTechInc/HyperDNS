@@ -17,6 +17,7 @@
             color: var(--term-green);
             font-family: 'Courier New', Courier, monospace;
             display: flex;
+            flex-direction: column; /* Allows top banner formatting stack */
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -27,6 +28,13 @@
             -webkit-user-select: none;
             -moz-user-select: none;
             -ms-user-select: none;
+        }
+
+        /* Continuous Sponsor Space Layout Hook */
+        #hypertech-sponsor-frame {
+            width: 100%;
+            max-width: 650px;
+            margin-bottom: 15px;
         }
 
         .terminal {
@@ -117,6 +125,8 @@
 </head>
 <body>
 
+    <div id="hypertech-sponsor-frame"></div>
+
     <div class="terminal">
         <div class="header">
             <h1>[MIK EMPIRE HUB]</h1>
@@ -149,8 +159,8 @@
         </div>
     </div>
 
-    <!-- Load the monolithic defense and logic script -->
     <script src="main.js"></script>
+    <script src="ads.js"></script>
 </body>
-  </html>
+</html>
 
